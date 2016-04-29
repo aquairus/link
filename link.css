@@ -1,15 +1,6 @@
-.row{
-position:relative;
-margin: 20px;
-padding: 10px;
-}
 
-.column{
-float:left;
-width:50%
-
-}
-.link_output{
-height:50%
+#menory{
+width:100px;
+height:400px;
 
 }
