@@ -9,7 +9,7 @@ function draw() {
            if (canvas.getContext) { //检测浏览器是否兼容
               ctx = canvas.getContext("2d");
         ctx.fillStyle="#FF0000";
-        // ctx.beginPath();
+      ctx.beginPath();
         cxt.arc(70,18,15,0,Math.PI*2,true);
         cxt.closePath();
         cxt.fill();
@@ -23,8 +23,8 @@ function draw() {
 
 function a(ww){
     var x,y;
-    x=ww.clientX;
-    y=ww.clientY;
+    x=ww.offsetX;
+    y=ww.offsetY;
     document.getElementById('div2').innerHTML="X"+":"+x+","+"Y"+":"+y;
 
     if(flag == 1){
@@ -36,21 +36,30 @@ function a(ww){
 
 
 function startpoint(posEvent){
-  x = posEvent.clientX
-  y = posEvent.clientY
+  // alert('start');
+  x = posEvent.offsetX;
+  y = posEvent.offsetY;
+    // alert("?");
   ctx.beginPath();
-  ctx.moveto(x,y)
+  // ctx.moveto(x,y);
+  //   alert("?");
   if(flag == 0){
-    flag = 1
+    flag = 1;
+
   }
+  // alert("?");
+  // a(posEvent)
 }
 
 
 function endpoint(posEvent){
-  x = posEvent.clientX
-  y = posEvent.clientY
-  ctx.stroke();
-
+ // alert('end');
+  x = posEvent.offsetX
+  y = posEvent.offsetY
+  // ctx.stroke();
+  if(flag == 1){
+    flag = 0;
+  }
 }
 
 var getRandomColor = function(){

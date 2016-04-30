@@ -26,8 +26,10 @@ require(['jquery'], function ($){
       }
       );
 
-      $('#div1').mouseup( function endpoint(event){
+      $('#div1').mouseup( function end(event){
+          // alert('welcome')
         endpoint(event)
+        //  alert('welcome')
       }
       );
 
@@ -36,22 +38,9 @@ require(['jquery'], function ($){
       //   alert('HI')}
       // );
       // $().ready(function orz(){
-      //   alert('HI')}
+      //   alert('welcome')}
       // );
       // )
 
 
 　　});
-
-
-var getRandomColor = function(){
-	return '#'+Math.floor(Math.random()*16777215).toString(16);
-}
-
-
-var changeColor=function changeColor(){
-	var colorMod = getRandomColor()
-
-	alert(colorMod)
-	ctx.strokeStyle  = colorMod
-}
