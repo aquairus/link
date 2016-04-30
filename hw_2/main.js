@@ -10,11 +10,15 @@ require(['jquery'], function ($){
 
       // /alert('ready');
 
-      $('.color').bind("click", function c(){
+      $('#color').bind("click", function c(){
         changeColor()
       }
       );
 
+      $('#clean').bind("click", function clean(){
+        ctx.clearRect(0,0,400,400);
+      }
+      );
 
       $('#div1').mousedown( function start(event){
         startpoint(event)
