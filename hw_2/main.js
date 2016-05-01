@@ -38,6 +38,12 @@ require(['jquery'], function ($){
       );
 
 
+      // $(function() {
+      //
+      //   $('#cp2').colorpicker();
+      //     alert('welcome')
+      // });
+
       // $('.color').bind("click", function c(){
       //   alert('HI')}
       // );

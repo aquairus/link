@@ -10,9 +10,9 @@ function draw() {
               ctx = canvas.getContext("2d");
         ctx.fillStyle="#FF0000";
       ctx.beginPath();
-        cxt.arc(70,18,15,0,Math.PI*2,true);
-        cxt.closePath();
-        cxt.fill();
+        // cxt.arc(70,18,15,0,Math.PI*2,true);
+        // cxt.closePath();
+        // cxt.fill();
                   //你的canvas代码在这里
     }else{
       //不兼容的代码
