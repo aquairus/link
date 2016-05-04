@@ -6,7 +6,9 @@ border-width:1px;
 border-style:solid;
 }
 
-
+.button{
+  float:right;
+}
 .canvas{
 width:400px;
 height:400px;

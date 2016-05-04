@@ -11,17 +11,44 @@ require(['jquery'], function ($){
       // /alert('ready');
 
       $('#color').bind("click", function c(){
-        changeColor()
+        colorMod=cp2.colorpicker('getValue','#00aabb')
+        ctx.strokeStyle  = colorMod
+        //
       }
       );
 
       $('#clean').bind("click", function clean(){
         ctx.clearRect(0,0,400,400);
+        //ctx.putImageData(tmp_data,0,0);
+      }
+      );
+      $('#restore').bind("click", function restore(){
+
+      //  ctx.clearRect(0,0,400,400);
+      tmp_data=pic_heap.pop()
+        ctx.putImageData(tmp_data,0,0);
+      }
+      );
+      $('#save').bind("click", function save(){
+        img_url=canvas.toDataURL("image/png");
+        pic = window.open(img_url, "canvas_pic")
       }
       );
 
+
+
+
       $('#div1').mousedown( function start(event){
-        startpoint(event)
+        ctx.beginPath();
+
+        if(flag == 0){
+          tmp_data=ctx.getImageData(0,0,400,400)
+          pic_heap.push(tmp_data)
+          flag = 1;
+
+        }
+      //  tmp_data=ctx.getImageData(0,0,400,400)
+      //  startpoint(event)
       }
       );
 
@@ -31,9 +58,9 @@ require(['jquery'], function ($){
       );
 
       $('#div1').mouseup( function end(event){
-          // alert('welcome')
+
         endpoint(event)
-        //  alert('welcome')
+
       }
       );
 

@@ -10,10 +10,10 @@
 
     <body >
 
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="../lib/bootstrap.css">
+      <link rel="stylesheet" href="../lib/font.css">
       <link rel="stylesheet" href="draw.css">
-      <link href="../lib/pick/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+      <link href="dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
 
 
 
@@ -22,36 +22,47 @@
       </ul>
       <br>
 
+
+
+<div class="container-fluid">
+<div class="row">
+      <div class="col-md-6" id="col-1">
     <div id="div1">
 
     <canvas id="canvas" width="400px" height="400px"></canvas>
-
+    </div>
     <hr>
           <span id="div2"> </span>
     <hr>
-    <p>
-      <button type="button" class="btn btn-lg btn-primary" id="color">换色</button>
-      <button type="button" class="btn btn-lg btn-danger" id="clean">清空</button>
 
+
+    <p class="button">
+      <button type="button" class="btn btn-lg btn-danger" id="clean">清空</button>
+      <button type="button" class="btn btn-lg btn-info" id="restore">复位</button>
+        <button type="button" class="btn btn-lg btn-success" id="save">保存</button>
     </p>
 
-    </div>
+
+  </div>
+
+  <div class="col-md-6" id="col-2">
 
     <div id="cp2" class="input-group colorpicker-component">
         <input type="text" value="#00AABB" class="form-control" />
         <span class="input-group-addon"><i></i></span>
     </div>
+    <p class="button">
+    <button type="button" class="btn btn-lg btn-primary" id="color">换色</button>
+  </p>
+  <div>
 
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="draw.css">
-    <link href="../lib/pick_dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
- -->
+</div>
+</div>
     <script src="../lib/jquery.js"></script>
     <script src="../lib/bootstrap.js"></script>
+    <script src="dist/js/bootstrap-colorpicker.js"></script>
 
 
-    <script src="../lib/pick/dist/js/bootstrap-colorpicker.js"></script>
     <script src="../lib/require.js" data-main="main.js"></script>
 
     <!-- <script src="../lib/pick/dist/js/bootstrap-colorpicker.js"></script> -->
