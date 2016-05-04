@@ -1,72 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>link_list</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>link_list</title>
 
+        <link rel="stylesheet" href="../lib/bootstrap.css">
+        <link rel="stylesheet" href="../lib/font.css">
+        <link rel="stylesheet" href="link.css">
 
-    <link rel="stylesheet" href="../lib/bootstrap.css">
-    <link rel="stylesheet" href="../lib/font.css">
-    <link rel="stylesheet" href="link.css">
+    </head>
+    <body>
 
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active">
+                <a href="#">Home</a>
+            </li>
 
-  </head>
-  <body>
+        </ul>
 
+        <div class="container-fluid">
+            <div class="row">
 
+                <div class="col-md-4" id="col-1">
+                    <h2>memory</h2>
+                    <div id="meneory">men</div>
+                    <div id="first"></div>
+                </div>
 
+                <div class="col-md-4" id="col-2">
+                    <h2>output</h2>
+                    <div class="link_output">
+                        hi
+                    </div>
+                    <hr>
+                    <h2>input</h2>
+                    <div class="input-group">
+                        <span class="input-group-addon"></span>
+                        <input type="text" class="form-control" name="id" placeholder="id">
+                        <input type="text" class="form-control" name="name" placeholder="name">
+                        <input type="text" class="form-control" name="class" placeholder="class">
+                        <input type="text" class="form-control" name="score" placeholder="score">
 
-      <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
+                    </div>
+                    <br>
 
-      </ul>
+                    <div class="link_input">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default">insert</button>
+                            <button type="button" class="btn btn-default">delate</button>
+                            <button type="button" class="btn btn-default">search</button>
+                            <button type="button" class="btn btn-default">traversal</button>
 
-
-    <div class="container-fluid">
-    <div class="row">
-
-      <div class="col-md-4" id="col-1">
-        <h2>memory</h2>
-        <div id="meneory">men</div>
-        <div id="first"></div>
-      </div>
-
-
-      <div class="col-md-4" id="col-2">
-        <h2>output</h2>
-        <div class="link_output">
-            hi
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <hr>
-        <h2>input</h2>
-        <div class="input-group">
-          <span class="input-group-addon"></span>
-          <input type="text" class="form-control" name="id" placeholder="id">
-          <input type="text" class="form-control" name="name" placeholder="name">
-          <input type="text" class="form-control" name="class" placeholder="class">
-          <input type="text" class="form-control" name="score" placeholder="score">
 
-        </div>
-        <br>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-        <div class="link_input" >
-          <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default">insert</button>
-            <button type="button" class="btn btn-default">delate</button>
-            <button type="button" class="btn btn-default">search</button>
-            <button type="button" class="btn btn-default">traversal</button>
-
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript"></script>
-  </body>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script type="text/javascript"></script>
+    </body>
 </html>

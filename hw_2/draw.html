@@ -1,76 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>draw</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>draw</title>
 
+        <body >
 
+            <link rel="stylesheet" href="../lib/bootstrap.css">
+            <link rel="stylesheet" href="../lib/font.css">
+            <link rel="stylesheet" href="draw.css">
+            <link href="dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
 
-    <body >
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active">
+                    <a href="#">Home</a>
+                </li>
+            </ul>
+            <br>
 
-      <link rel="stylesheet" href="../lib/bootstrap.css">
-      <link rel="stylesheet" href="../lib/font.css">
-      <link rel="stylesheet" href="draw.css">
-      <link href="dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6" id="col-1">
+                        <div id="div1">
 
+                            <canvas id="canvas" width="400px" height="400px"></canvas>
+                        </div>
+                        <hr>
+                        <span id="div2"></span>
+                        <hr>
 
+                        <p class="button">
+                            <button type="button" class="btn btn-lg btn-danger" id="clean">清空</button>
+                            <button type="button" class="btn btn-lg btn-info" id="restore">复位</button>
+                            <button type="button" class="btn btn-lg btn-success" id="save">保存</button>
+                        </p>
 
-      <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
-      </ul>
-      <br>
+                    </div>
 
+                    <div class="col-md-6" id="col-2">
 
+                        <div id="cp2" class="input-group colorpicker-component">
+                            <input type="text" value="#00AABB" class="form-control"/>
+                            <span class="input-group-addon">
+                                <i></i>
+                            </span>
+                        </div>
+                        <p class="button">
+                            <button type="button" class="btn btn-lg btn-primary" id="color">换色</button>
+                        </p>
+                        <div></div>
+                    </div>
 
-<div class="container-fluid">
-<div class="row">
-      <div class="col-md-6" id="col-1">
-    <div id="div1">
+                    <script src="../lib/jquery.js"></script>
+                    <script src="../lib/bootstrap.js"></script>
+                    <script src="dist/js/bootstrap-colorpicker.js"></script>
+                    <script src="../lib/require.js" data-main="main.js"></script>
+                    <script src="draw.js"></script>
 
-    <canvas id="canvas" width="400px" height="400px"></canvas>
-    </div>
-    <hr>
-          <span id="div2"> </span>
-    <hr>
-
-
-    <p class="button">
-      <button type="button" class="btn btn-lg btn-danger" id="clean">清空</button>
-      <button type="button" class="btn btn-lg btn-info" id="restore">复位</button>
-        <button type="button" class="btn btn-lg btn-success" id="save">保存</button>
-    </p>
-
-
-  </div>
-
-  <div class="col-md-6" id="col-2">
-
-    <div id="cp2" class="input-group colorpicker-component">
-        <input type="text" value="#00AABB" class="form-control" />
-        <span class="input-group-addon"><i></i></span>
-    </div>
-    <p class="button">
-    <button type="button" class="btn btn-lg btn-primary" id="color">换色</button>
-  </p>
-  <div>
-
-</div>
-</div>
-    <script src="../lib/jquery.js"></script>
-    <script src="../lib/bootstrap.js"></script>
-    <script src="dist/js/bootstrap-colorpicker.js"></script>
-
-
-    <script src="../lib/require.js" data-main="main.js"></script>
-
-    <!-- <script src="../lib/pick/dist/js/bootstrap-colorpicker.js"></script> -->
-
-    <script src="draw.js"></script>
-
-
-
-
-    </body>
-    </html>
+                </body>
+            </html>
