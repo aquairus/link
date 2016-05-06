@@ -19,7 +19,12 @@ var second_string = "俊娟 小蓉 春元 湘平 惠琼 昭君 一菲 秀琼 淑
 静君 星辰 子桐 慧艳 紫怡 灵燕 惠燕 淑怡 梓桐 思璇 \
 立涛 思月 文莲 燕子 嘉懿 瑞婷 蕊蕊 逸菲 翔云 月芳 \
 晓怡 静敏 思晨 焕英 素琼 丹青 佳雪 舒涵 雅晴 静燕 \
-嘉懿 煜城 懿轩 烨伟 苑博 伟泽 熠彤 \
+嘉懿 煜城 懿轩 烨伟 苑博 伟泽 熠彤 二 三 四 五 \
+宇 泽 博 铭 亦 广 远 用 浩 主 大 义 涵　意 包 名 杰 \
+洛 璟 煜 芮 睿 晨 熠 悟 莹 颖 语 烜 瑄 萱 \
+轩 珸 羽 璇 允 芸 沺 苒 阳 煦 珊 灿 耀 烨 \
+诺 玥 悦 跃 峥 知 智 旭 珝 珬 珂 姁 琬 妧 \
+炎 妍 珚 彦 琰 婷 琅 朗 卓 琢 凡 思 宇 郁 \
 鸿煊 博涛 烨霖 烨华 煜祺 智宸 正豪 \
 昊然 明杰 立诚 立轩 立辉 峻熙 弘文 \
 熠彤 鸿煊 烨霖 哲瀚 鑫鹏 致远 俊驰 \
@@ -31,15 +36,22 @@ var first_name = first_string.split(" ");
 var second_name = second_string.split(" ");
 
 
+function fresh(){
+  $('tr:gt(0)').remove()
+  Student_list.forEach(function(e,idx) {
+      e.hello()
+  })
+
+}
 
 
 class Student {
     constructor() {
-        this.uid = 2015200000 + Math.ceil(Math.random() * 100000)
+        this.uid = 2015000000 + Math.ceil(Math.random() * 1000000)
         var first = Math.ceil(Math.random() * (first_name.length - 1))
         var second = Math.ceil(Math.random() * (second_name.length - 1))
         this.name = first_name[first] + second_name[second];
-        this.age = 18 + Math.round(Math.random() * 2);
+        this.age = 1 + Math.round(Math.random() * 2);
         this._class = 1 + Math.round(Math.random() * 4);
         this.score = 70 + Math.round(Math.random() * 30);
     }
@@ -72,36 +84,64 @@ $("#gen_all").click(function(event) {
         var new_student = new Student()
         new_student.hello()
         Student_list.push(new_student);
-        // console.log(len)
+
     }
 
 })
+
+
+function my_sort(array,cmp){
+  for (var i = 0; i < array.length; i++) {
+    for (var j = i; j < array.length; j++) {
+      if (cmp(array[i],array[j])){
+        var tmp=array[i]
+        array[i]=array[j]
+        array[j]=tmp
+      }
+    }
+  }
+}
 
 $("#delete").click(function(event) {
     $('tr:gt(1)').remove()
 })
 
 
+
+function fresh(){
+  $('tr:gt(1)').remove()
+  Student_list.forEach(function(e,idx) {
+      e.hello()
+  })
+
+}
+
+
 $("#by_name").click(function(event) {
-    alert('sort_by_name')
+
+  my_sort(Student_list,function sortNumber(b,a) {
+          return a.name> b.name
+  })
+  // Student_list.sort(function sortNumber(b,a) {
+          // return a.name> b.name
+  // })
+  fresh()
 })
 
 $("#by_id").click(function(event) {
-    alert('sort_by_id')
+  my_sort(Student_list,function sortNumber(b,a) {
+          return a.uid< b.uid
+  })
+  fresh()
 })
 
 $("#by_grade").click(function(event) {
-    $('tr:gt(1)').remove()
-    Student_list.sort(function sortNumber(b,a) {
-
+  my_sort(Student_list,function sortNumber(b,a) {
         if (a.score == b.score) {
-            return a.uid - b.uid
+            return a.uid>b.uid
         } else {
-            return a.score - b.score
+            return a.score> b.score
         }
     })
-    Student_list.forEach(function(e,idx) {
-
-        e.hello()
-    })
+    fresh()
 })
