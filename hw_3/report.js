@@ -19,6 +19,12 @@ class Student {
 $("#gen").click(function(event) {
     alert('gen')
 })
-$("#sort").click(function(event) {
-    alert('sort')
+$("#by_name").click(function(event) {
+    alert('sort_by_name')
+})
+$("#by_id").click(function(event) {
+    alert('sort_by_id')
+})
+$("#by_grade").click(function(event) {
+    alert('sort_by_grade')
 })

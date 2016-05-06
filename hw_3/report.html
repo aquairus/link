@@ -28,15 +28,19 @@
                     <table class="table">
 
                         <tbody>
-                          <th>Header 1</th>
+                            <th>Header 1</th>
                             <tr>
 
-                                <td>td  </td>
-                                  <td>td  </td>
+                                <td>td
+                                </td>
+                                <td>td
+                                </td>
                             </tr>
                             <tr>
-                                <td>td  </td>
-                                  <td>td  </td>
+                                <td>td
+                                </td>
+                                <td>td
+                                </td>
                             </tr>
                         </tbody>
 
@@ -48,10 +52,20 @@
 
                     <h2>button</h2>
 
-                    <br>
 
-                    <button type="button" class="btn btn-default" id="gen">generate</button>
-                    <button type="button" class="btn btn-default" id="sort">sort</button>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sort <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a id="by_name">by_name</a></li>
+                        <li><a id="by_id">by_id</a></li>
+                        <li><a id="by_grade">by_grade</a></li>
+
+                      </ul>
+                    </div>
+                    <button type="button" class="btn btn-success" id="gen">generate</button>
+                    <!-- <button type="button" class="btn btn-default" id="sort">sort</button> -->
 
                 </div>
             </div>
