@@ -29,19 +29,14 @@
 
                         <tbody>
                             <th>Header 1</th>
-                            <tr>
+                            <tr >
+                                <td>uid</td>
+                                <td>name</td>
+                                <td>age</td>
+                                <td>class</td>
+                                <td>score</td>
+                            </tr>
 
-                                <td>td
-                                </td>
-                                <td>td
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>td
-                                </td>
-                                <td>td
-                                </td>
-                            </tr>
                         </tbody>
 
                     </table>
@@ -52,20 +47,31 @@
 
                     <h2>button</h2>
 
-
                     <div class="btn-group">
-                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Sort <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a id="by_name">by_name</a></li>
-                        <li><a id="by_id">by_id</a></li>
-                        <li><a id="by_grade">by_grade</a></li>
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sort
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a id="by_name">by_name</a>
+                            </li>
+                            <li>
+                                <a id="by_id">by_id</a>
+                            </li>
+                            <li>
+                                <a id="by_grade">by_grade</a>
+                            </li>
 
-                      </ul>
+                        </ul>
                     </div>
+                    <h3>insert:</h3>
+                    <p id="last_insert"></p>
+                    <hr>
+                    <button type="button" class="btn btn-danger" id="delete">delete_all</button>
                     <button type="button" class="btn btn-success" id="gen">generate</button>
-                    <!-- <button type="button" class="btn btn-default" id="sort">sort</button> -->
+                    <button type="button" class="btn btn-success" id="gen_all">generate_all</button>
+
 
                 </div>
             </div>
