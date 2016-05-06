@@ -103,13 +103,13 @@ function my_sort(array,cmp){
 }
 
 $("#delete").click(function(event) {
-    $('tr:gt(1)').remove()
+    $('tr:gt(0)').remove()
 })
 
 
 
 function fresh(){
-  $('tr:gt(1)').remove()
+  $('tr:gt(0)').remove()
   Student_list.forEach(function(e,idx) {
       e.hello()
   })
