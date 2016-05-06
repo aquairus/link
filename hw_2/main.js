@@ -15,6 +15,8 @@ require(['jquery'], function($) {
 
     });
 
+
+
     $('#clean').bind("click", function clean() {
         ctx.clearRect(0, 0, 400, 400);
 
