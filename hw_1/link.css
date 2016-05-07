@@ -1,14 +1,35 @@
 #col-1{
 
-margin: 20px;
-padding: 10px;
+margin: 10px;
+padding: 5px;
 border-width:1px;
 border-style:solid;
 }
 
 
 #menory{
-width:100px;
+width:250px;
 height:400px;
+border-width:1px;
+border-style:solid;
+padding: 10px;
+margin: 10px;
+
+
+}
+.men{
+  width:15px;
+  height:15px;
+  float: left;
+  border-style:solid;
+  border-width:1px;
+}
+.free{
+  border-color:#a4e4eb
+}
+.occupy{
+
+  background-color:#007b87;
+  border-color:#007b87;
 
 }

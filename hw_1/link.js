@@ -1,3 +1,4 @@
+
 class Student {
     constructor(name, uid, _class, score) {
         this.uid = uid
@@ -7,7 +8,9 @@ class Student {
     }
     next_one(next_student) {
         this.next = next_student;
-
+    }
+    locate(idx) {
+        this.idx = idx;
     }
     hello() {
         $('#last_insert').html('uid:' + this.uid + ' name:' + this.name + '<br>' + 'class:' + this._class + ' score:' + this.score)
@@ -60,7 +63,9 @@ class Student_list {
         return result
     }
     delete(idx){
-      this.id_list.splice(idx,1)
+      var stud=this.id_list.splice(idx,1)
+      console.log(stud)
+      free(stud[0].idx)
       this.show()
     }
 
@@ -80,6 +85,41 @@ class Student_list {
 }
 
 
+var size = 25 * 15;
+var menory = new Array();
+for (var i = 0; i < size; i++) {
+  menory.push(i)
+}
+
+class_one = new Student_list();
+
+
+$(document).ready(function(){
+  for (var i = 0; i < size; i++) {
+    var ele=document.createElement("div");
+    ele=$(ele).addClass("free").addClass("men")
+    $("#menory").append(ele)
+  }
+
+});
+
+function malloc(){
+  var rest=menory.length;
+  var loc=Math.floor(Math.random()*rest);
+  var idx=menory.splice(loc,1)
+  console.log(idx)
+  var str=".men:eq("+idx+")"
+  $(str).removeClass("free").addClass("occupy")
+  return idx;
+}
+
+function free(idx){
+  var str=".men:eq("+idx+")"
+  $(str).removeClass("occupy").addClass("free")
+  menory.push(idx)
+
+}
+
 $("#insert").click(function(event) {
 
     var uid = $("input[name=uid]").val();
@@ -87,9 +127,13 @@ $("#insert").click(function(event) {
     var _class = $("input[name=class]").val();
     var score = $("input[name=score]").val();
     $('input').val("")
+
     var new_stud = new Student(name, uid, _class, score);
+    var idx=malloc()
+    new_stud.locate(idx)
     new_stud.hello()
     class_one.add(new_stud)
+
 });
 
 
@@ -111,16 +155,9 @@ $("#delete").click(function(event) {
         class_one.delete(idx)
     }
 
+
 })
 $("#average").click(function(event) {
     var ave =   class_one.average()
       $('#last_insert').html('average:'+ave)
 })
-
-
-var size = 20 * 40;
-var menory = new Array(size);
-
-
-class_one = new Student_list();
-// // var xiaoming = new Student('小明')
