@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BallX	/Users/apple/Desktop/link/hw_4/ball.js	/^var BallX, BallY;$/;"	variable	line:1
+AddX	/Users/apple/Desktop/link/hw_4/ball.js	/^var AddX, AddY;$/;"	variable	line:2
+width	/Users/apple/Desktop/link/hw_4/ball.js	/^var width, height;$/;"	variable	line:3
+canvas	/Users/apple/Desktop/link/hw_4/ball.js	/^var canvas;$/;"	variable	line:4
+context	/Users/apple/Desktop/link/hw_4/ball.js	/^var context;$/;"	variable	line:5
+functionId	/Users/apple/Desktop/link/hw_4/ball.js	/^var functionId;$/;"	variable	line:6
+speed	/Users/apple/Desktop/link/hw_4/ball.js	/^var speed = 3$/;"	variable	line:8
+running_flag	/Users/apple/Desktop/link/hw_4/ball.js	/^var running_flag = 0;$/;"	variable	line:12
+btnBegin_onclick	/Users/apple/Desktop/link/hw_4/ball.js	/^function btnBegin_onclick() {$/;"	function	line:14
+btnBegin_onclick	/Users/apple/Desktop/link/hw_4/ball.js	/^function btnBegin_onclick() {$/;"	function	line:14
+collision_detection	/Users/apple/Desktop/link/hw_4/ball.js	/^function collision_detection() {$/;"	function	line:33
+collision_detection	/Users/apple/Desktop/link/hw_4/ball.js	/^function collision_detection() {$/;"	function	line:33
+canvas_init	/Users/apple/Desktop/link/hw_4/ball.js	/^function canvas_init() {$/;"	function	line:50
+canvas_init	/Users/apple/Desktop/link/hw_4/ball.js	/^function canvas_init() {$/;"	function	line:50
+draw	/Users/apple/Desktop/link/hw_4/ball.js	/^function draw() {$/;"	function	line:63
+draw	/Users/apple/Desktop/link/hw_4/ball.js	/^function draw() {$/;"	function	line:63
+canvas_mouseup	/Users/apple/Desktop/link/hw_4/ball.js	/^function canvas_mouseup(ev) {$/;"	function	line:74
+canvas_mouseup	/Users/apple/Desktop/link/hw_4/ball.js	/^function canvas_mouseup(ev) {$/;"	function	line:74
+end	/Users/apple/Desktop/link/hw_4/ball.js	/^$('#div1').mouseup(function end(event) {$/;"	function	line:119

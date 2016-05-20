@@ -8,7 +8,8 @@ var functionId;
 var speed = 3
 var ball_diameter = 30
 var ball_color = "#5effb2"
-
+var functionId;
+var running_flag = 0;
 
 function btnBegin_onclick() {
 
@@ -25,40 +26,37 @@ function btnBegin_onclick() {
     draw();
     document.getElementById("start").disabled = "disabled";
     functionId = setInterval("draw()", 20);
+    running_flag = 1;
 }
 
 
 function collision_detection() {
-    if (BallX < 5)
-    {
+    if (BallX < 5) {
         BallX = 5;
         AddX = -AddX;
-    } else if (BallX > width - 5)
-    {
+    } else if (BallX > width - 5) {
         BallX = width - 5;
         AddX = -AddX;
     }
-    if (BallY < 5)
-    {
+    if (BallY < 5) {
         BallY = 5;
         AddY = -AddY;
-    } else if (BallY > height - 5)
-    {
+    } else if (BallY > height - 5) {
         BallY = height - 5;
-        AddY = -AddY; 
+        AddY = -AddY;
     }
 }
 
 function canvas_init() {
-  context.clearRect(0, 0, width, height);
-  context.save();
-  context.fillStyle = "#5ee2ff";
-  context.strokeStyle = "black";
-  context.linewidth = 3;
-  context.fillRect(3, 3, width - 5, height - 5);
-  context.strokeRect(3, 3, width - 5, height - 5);
-  context.beginPath();
-  context.fillStyle = ball_color;
+    context.clearRect(0, 0, width, height);
+    context.save();
+    context.fillStyle = "#5ee2ff";
+    context.strokeStyle = "black";
+    context.linewidth = 3;
+    context.fillRect(3, 3, width - 5, height - 5);
+    context.strokeRect(3, 3, width - 5, height - 5);
+    context.beginPath();
+    context.fillStyle = ball_color;
 }
 
 
@@ -78,7 +76,7 @@ function canvas_mouseup(ev) {
     var differenceY;
 
 
-    differenceX = ev.offsetX- BallX;
+    differenceX = ev.offsetX - BallX;
     differenceY = ev.offsetY - BallY;
 
     if (-ball_diameter <= differenceX && differenceX <= ball_diameter)
@@ -95,8 +93,24 @@ function canvas_mouseup(ev) {
 
 $("#start").click(function(event) {
     btnBegin_onclick()
-
 })
+
+$("#pause").click(
+    function() {
+        if (running_flag) {
+            window.clearInterval(functionId);
+            running_flag = 0
+        }
+    }
+)
+$("#continue").click(
+    function() {
+        if (running_flag == 0) {
+            functionId = setInterval("draw()", 20);
+            running_flag = 1
+        }
+    }
+)
 
 $(document).ready(function() {
     window_onload()
@@ -104,5 +118,4 @@ $(document).ready(function() {
 
 $('#div1').mouseup(function end(event) {
     canvas_mouseup(event)
-
 });
