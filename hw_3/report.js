@@ -1,3 +1,5 @@
+'use strict';
+
 var Student_list_size = 1000;
 var Student_list = new Array();
 
@@ -35,21 +37,18 @@ var second_string = "俊娟 小蓉 春元 湘平 惠琼 昭君 一菲 秀琼 淑
 var first_name = first_string.split(" ");
 var second_name = second_string.split(" ");
 
-
-function fresh(){
-  $('tr:gt(0)').remove()
-  Student_list.forEach(function(e,idx) {
-      e.hello()
-  })
-
+function fresh() {
+    $('tr:gt(0)').remove();
+    Student_list.forEach(function (e, idx) {
+        e.hello();
+    });
 }
-
 
 class Student {
     constructor() {
-        this.uid = 2015000000 + Math.ceil(Math.random() * 1000000)
-        var first = Math.ceil(Math.random() * (first_name.length - 1))
-        var second = Math.ceil(Math.random() * (second_name.length - 1))
+        this.uid = 2015000000 + Math.ceil(Math.random() * 1000000);
+        var first = Math.ceil(Math.random() * (first_name.length - 1));
+        var second = Math.ceil(Math.random() * (second_name.length - 1));
         this.name = first_name[first] + second_name[second];
         this.age = 1 + Math.round(Math.random() * 2);
         this._class = 1 + Math.round(Math.random() * 4);
@@ -57,91 +56,76 @@ class Student {
     }
     next_one(next_student) {
         this.next = next_student;
-
     }
     hello() {
-        var td_text = '<tr><td>' + this.uid + '</td><td>' +
-            this.name + '</td><td>' + this._class + "</td><td>" +
-            this.age + '</td><td>' + this.score + "</td></tr>"
-        var new_text = 'uid:' + this.uid + '<br>name:' + this.name +
-            '<br>' + 'class: ' + this._class + " age:" + this.age +
-            '<br>score:' + this.score
-        $('#last_insert').html(new_text)
-        $('tbody').append(td_text)
+        var td_text = '<tr><td>' + this.uid + '</td><td>' + this.name + '</td><td>' + this._class + "</td><td>" + this.age + '</td><td>' + this.score + "</td></tr>";
+        var new_text = 'uid:' + this.uid + '<br>name:' + this.name + '<br>' + 'class: ' + this._class + " age:" + this.age + '<br>score:' + this.score;
+        $('#last_insert').html(new_text);
+        $('tbody').append(td_text);
     }
 }
 
-
-
-$("#gen").click(function(event) {
-    var new_student = new Student()
-    new_student.hello()
+$("#gen").click(function (event) {
+    var new_student = new Student();
+    new_student.hello();
     Student_list.push(new_student);
-
-})
-$("#gen_all").click(function(event) {
+});
+$("#gen_all").click(function (event) {
     for (var i = 0; i < Student_list_size; i++) {
-        var new_student = new Student()
-        new_student.hello()
+        var new_student = new Student();
+        new_student.hello();
         Student_list.push(new_student);
-
     }
+});
 
-})
-
-
-function my_sort(array,cmp){
-  for (var i = 0; i < array.length; i++) {
-    for (var j = i; j < array.length; j++) {
-      if (cmp(array[i],array[j])){
-        var tmp=array[i]
-        array[i]=array[j]
-        array[j]=tmp
-      }
-    }
-  }
-}
-
-$("#delete").click(function(event) {
-    $('tr:gt(0)').remove()
-})
-
-
-
-function fresh(){
-  $('tr:gt(0)').remove()
-  Student_list.forEach(function(e,idx) {
-      e.hello()
-  })
-
-}
-
-
-$("#by_name").click(function(event) {
-
-  my_sort(Student_list,function sortNumber(b,a) {
-          return a.name> b.name
-  })
-  // Student_list.sort(function sortNumber(b,a) {
-          // return a.name> b.name
-  // })
-  fresh()
-})
-
-$("#by_id").click(function(event) {
-  my_sort(Student_list,function sortNumber(b,a) {
-          return a.uid< b.uid
-  })
-  fresh()
-})
-
-$("#by_grade").click(function(event) {
-  my_sort(Student_list,function sortNumber(b,a) {
-        if (a.score == b.score) {
-            return a.uid>b.uid
-        } else {
-            return a.score> b.score
+function my_sort(array, cmp) {
+    for (var i = 0; i < array.length; i++) {
+        for (var j = i; j < array.length; j++) {
+            if (cmp(array[i], array[j])) {
+                var tmp = array[i];
+                array[i] = array[j];
+                array[j] = tmp;
+            }
         }
-    })
-    fresh()
-})
+    }
+}
+
+$("#delete").click(function (event) {
+    $('tr:gt(0)').remove();
+});
+
+function fresh() {
+    $('tr:gt(0)').remove();
+    Student_list.forEach(function (e, idx) {
+        e.hello();
+    });
+}
+
+$("#by_name").click(function (event) {
+
+    my_sort(Student_list, function sortNumber(b, a) {
+        return a.name > b.name;
+    });
+    // Student_list.sort(function sortNumber(b,a) {
+    // return a.name> b.name
+    // })
+    fresh();
+});
+
+$("#by_id").click(function (event) {
+    my_sort(Student_list, function sortNumber(b, a) {
+        return a.uid < b.uid;
+    });
+    fresh();
+});
+
+$("#by_grade").click(function (event) {
+    my_sort(Student_list, function sortNumber(b, a) {
+        if (a.score == b.score) {
+            return a.uid > b.uid;
+        } else {
+            return a.score > b.score;
+        }
+    });
+    fresh();
+});

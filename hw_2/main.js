@@ -21,12 +21,15 @@ require(['jquery'], function($) {
         ctx.clearRect(0, 0, 400, 400);
 
     });
+
+
     $('#restore').bind("click", function restore() {
-
-
         tmp_data = pic_heap.pop()
         ctx.putImageData(tmp_data, 0, 0);
     });
+
+
+
     $('#save').bind("click", function save() {
         img_url = canvas.toDataURL("image/png");
         pic = window.open(img_url, "canvas_pic")

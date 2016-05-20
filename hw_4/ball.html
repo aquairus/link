@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>小球弹跳游戏</title>
+
+        <body >
+            <h1>小球弹跳游戏</h1>
+            <link rel="stylesheet" href="../lib/bootstrap.css">
+            <link rel="stylesheet" href="../lib/font.css">
+            <link rel="stylesheet" href="ball.css">
+            <link href="dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active">
+                    <a href="#">Home</a>
+                </li>
+            </ul>
+            <br>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6" id="col-1">
+                        <div id="div1">
+
+                            <canvas id="canvas" width="400px" height="400px"></canvas>
+                        </div>
+                        <hr>
+
+                        <span id="div2"></span>
+                        <hr>
+
+                        <p class="button">
+                            <button type="button" class="btn btn-lg btn-danger" id="start">开始</button>
+                            <button type="button" class="btn btn-lg btn-info" id="pause">暂停</button>
+
+                        </p>
+
+                    </div>
+
+                    <div class="col-md-6" id="col-2"></div>
+
+                    <script src="../lib/jquery.js"></script>
+                    <script src="../lib/bootstrap.js"></script>
+                    <script src="ball.js"></script>
+
+                </body>
+            </html>

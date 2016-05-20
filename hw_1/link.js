@@ -9,8 +9,8 @@ class Student {
     next_one(next_student) {
         this.next = next_student;
     }
-    locate(idx) {
-        this.idx = idx;
+    locate(loc) {
+        this.loc = loc;
     }
     hello() {
         $('#last_insert').html('uid:' + this.uid + ' name:' + this.name + '<br>' + 'class:' + this._class + ' score:' + this.score)
@@ -64,8 +64,7 @@ class Student_list {
     }
     delete(idx){
       var stud=this.id_list.splice(idx,1)
-      console.log(stud)
-      free(stud[0].idx)
+      free(stud[0].loc)
       this.show()
     }
 
@@ -105,12 +104,12 @@ $(document).ready(function(){
 
 function malloc(){
   var rest=menory.length;
-  var loc=Math.floor(Math.random()*rest);
-  var idx=menory.splice(loc,1)
-  console.log(idx)
-  var str=".men:eq("+idx+")"
+  var idx=Math.floor(Math.random()*rest);
+
+  var loc=menory.splice(idx,1)
+  var str=".men:eq("+loc+")"
   $(str).removeClass("free").addClass("occupy")
-  return idx;
+  return loc;
 }
 
 function free(idx){
@@ -129,8 +128,8 @@ $("#insert").click(function(event) {
     $('input').val("")
 
     var new_stud = new Student(name, uid, _class, score);
-    var idx=malloc()
-    new_stud.locate(idx)
+    var loc=malloc()
+    new_stud.locate(loc)
     new_stud.hello()
     class_one.add(new_stud)
 
